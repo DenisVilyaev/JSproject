@@ -1,0 +1,11 @@
+.header {
+    background-color: antiquewhite;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+}
+
+.header__container {
+    justify-content: center;
+    display: flex;
+}
