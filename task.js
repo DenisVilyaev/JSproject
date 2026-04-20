@@ -10,15 +10,15 @@ console.log(a - b);
 
 // Урок: операторы и условия
 
-title = "";
-if ((title = "")) {
+title = "выбить собаке зубы";
+if ((title === "")) {
   console.log("Название задачи не указано");
 } else {
-  console.log("Задача:");
+  console.log("Задача:", title);
 }
 
 tasks = 0;
-if ((tasks = 0)) {
+if ((tasks === 0)) {
   console.log("Список пуст");
 } else if (tasks > 0 && tasks <= 3) {
   console.log("Немного задач");
