@@ -25,3 +25,31 @@ if ((tasks === 0)) {
 } else {
   console.log("Много задач");
 }
+
+// Урок: функции JS
+
+function sum(a, b) {
+  return `сумма: ${a + b}`
+}
+console.log(sum(235, 47))
+
+// function isTaskDone(status) {
+//   if (status === "Выполнена") {
+//   return true
+// } else {
+//   return false
+// }
+// }
+
+// короткая запись
+function isTaskDone(status) {
+  return status === "Выполнена"
+}
+console.log (isTaskDone("В процессе"))
+console.log (isTaskDone("Выполнена"))
+
+function taskSummary(total, done) {
+  return `Всего: ${total}| Выполнено: ${done}| Активных: ${total - done}`
+}
+
+console.log(taskSummary(13, 5))
