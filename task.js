@@ -10,21 +10,31 @@ console.log(a - b);
 
 // Урок: операторы и условия
 
-// title = "выбить собаке зубы";
-// if ((title === "")) {
-//   console.log("Название задачи не указано");
-// } else {
-//   console.log("Задача:", title);
-// }
+title = "выбить собаке зубы";
+if ((title === "")) {
+  console.log("Название задачи не указано");
+} else {
+  console.log("Задача:", title);
+}
 
-// tasks = 0;
-// if ((tasks === 0)) {
-//   console.log("Список пуст");
-// } else if (tasks > 0 && tasks <= 3) {
-//   console.log("Немного задач");
-// } else {
-//   console.log("Много задач");
-// }
+tasks = 0;
+if ((tasks === 0)) {
+  console.log("Список пуст");
+} else if (tasks > 0 && tasks <= 3) {
+  console.log("Немного задач");
+} else {
+  console.log("Много задач");
+}
+
+// (55 такая же запись)
+isCompleted = false
+if ((isCompleted === true)) {
+  console.log("Задача выполнена")
+} else {
+  console.log("Задача ещё в работе")
+}
+
+
 
 // Урок: функции JS
 
@@ -55,7 +65,7 @@ function taskSummary(total, done) {
 
 console.log(taskSummary(13, 5));
 
-// Урок:
+// Урок: Массивы данных
 
 const cities = ["Moscow", "Kazan", "Tomsk", "Magadan"];
 cities[cities.length - 1] = "Izhevsk";
@@ -68,7 +78,7 @@ let task = {
 };
 console.log(task);
 
-const tasks = [
+const zadachi = [
   { id: 1,
     title: "научиться считать",
     status: "выполнена",
@@ -82,8 +92,8 @@ const tasks = [
     status: "в процессе"
   },
 ];
-console.log(tasks[0].title);
-console.log(tasks[1].status);
+console.log(zadachi[0].title);
+console.log(zadachi[1].status);
 
 const user = [
   { username: 'Денис'},
