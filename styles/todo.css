@@ -18,7 +18,7 @@
 .todo__container {
   display: flex;
   flex-direction: column;
-  gap: 12px 0;
+  gap: 15px 0;
 }
 
 .todo__input {
@@ -28,10 +28,20 @@
   outline: 1px rgba(30, 10, 60, 0.12);
   border-radius: 8px;
   background-color: #ffffff;
+  transition: ease-in-out 0.1s all;
 }
 
 .todo__input ::placeholder {
   background-color: #9b96a6;
+}
+
+.todo__input:hover {
+    border-color: rgba(30, 10, 60, 0.2);
+}
+
+.todo__input:focus-visible {
+    border-color: #7e66cd;
+    box-shadow: 0 0 0 3px rgba(126, 102, 205, 0.28);
 }
 
 .todo__add {
@@ -44,6 +54,11 @@
   background-color: #7e66cd;
   cursor: pointer;
 }
+
+/* .todo__add:hover {
+    border-color: rgba(30, 10, 60, 0.2);
+    transition: ease-in-out 0.1s all;
+} */
 
 .todo__newtask {
   display: flex;
