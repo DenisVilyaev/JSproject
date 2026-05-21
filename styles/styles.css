@@ -1,0 +1,8 @@
+body {
+    background:
+    radial-gradient(1200px 900px at 20% 25%, #ebe6f5 0%, transparent 60%),
+    radial-gradient(1200px 900px at 80% 35%, #f6eee4 0%, transparent 60%),
+    radial-gradient(1200px 900px at 50% 85%, #e6eef6 0%, transparent 60%),
+    linear-gradient(#f6f3f9, #fbfaf8);
+    background-attachment: fixed;
+}

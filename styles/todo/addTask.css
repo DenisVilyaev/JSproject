@@ -1,0 +1,48 @@
+.todo__input {
+  width: 100%;
+  padding: 12px 20px;
+  font-size: 14px;
+  outline: 1px rgba(30, 10, 60, 0.12);
+  border-radius: 8px;
+  background-color: #ffffff;
+  transition: ease-in-out 0.1s all;
+}
+
+.todo__input ::placeholder {
+  background-color: #9b96a6;
+}
+
+.todo__input:hover {
+    border-color: rgba(30, 10, 60, 0.2);
+}
+
+.todo__input:focus-visible {
+    border-color: #7e66cd;
+    box-shadow: 0 0 0 3px rgba(126, 102, 205, 0.28);
+}
+
+.todo__add {
+  padding: 12px 40px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  outline: 1px rgba(30, 10, 60, 0.12);
+  color: #ffffff;
+  background-color: #7e66cd;
+  cursor: pointer;
+}
+
+.todo__add:hover {
+    border-color: rgba(30, 10, 60, 0.2);
+    transition: ease-in-out 0.1s all;
+}
+
+.input--error {
+  border-color: #cb6e6e;
+  box-shadow: 0 0 3px rgba(203, 110, 110, 0.4);
+}
+.error-text {
+  color: #cb6e6e;
+  font-size: 13px;
+  margin-top: 4px;
+}

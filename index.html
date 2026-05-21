@@ -7,7 +7,11 @@
     <link rel="stylesheet" href="./styles/styles.css" />
     <link rel="stylesheet" href="./styles/normalize.css" />
     <link rel="stylesheet" href="./styles/header.css" />
-    <link rel="stylesheet" href="./styles/todo.css" />
+    <link rel="stylesheet" href="./styles/todo/todo.css" />
+    <link rel="stylesheet" href="./styles/todo/addTask.css" />
+    <link rel="stylesheet" href="./styles/todo/searchTask.css" />
+    <link rel="stylesheet" href="./styles/todo/tasks.css" />
+    <link rel="stylesheet" href="./styles/todo/footerControls.css" />
   </head>
   <body class="body">
     <header class="header">
@@ -27,17 +31,17 @@
       <h2 class="todo__title">Задачи</h2>
       <div class="todo__container">
         <!-- row 1 -->
-        <div class="todo__newtask">
-          <input type="text" placeholder="Введите задачу" class="todo__input" />
-          <button class="todo__add">Добавить</button>
-        </div>
+        <form class="todo__newtask">
+          <input type="text" placeholder="Введите задачу" class="todo__input todo__input-add" />
+          <button type="submit" class="todo__add">Добавить</button>
+        </form>
         <!-- row 2 -->
         <div class="todo__tasksearch">
-          <input type="text" placeholder="Поиск задач" class="todo__input" />
+          <input type="text" placeholder="Поиск задач" class="todo__input todo__input-search" />
           <div class="todo__filters">
-            <button class="todo__filter">Все</button>
-            <button class="todo__filter">Активные</button>
-            <button class="todo__filter">Завершённые</button>
+            <button class="todo__filter" data-filter="all">Все</button>
+            <button class="todo__filter" data-filter="active">Активные</button>
+            <button class="todo__filter" data-filter="done">Завершённые</button>
           </div>
           <select class="todo__sort todo__filter">
             <option value="old">Сначала старые</option>
@@ -45,61 +49,74 @@
           </select>
         </div>
         <!-- row 3 -->
-        <div class="todo__item task">
-          <div class="task__content">
-            <h3 class="task__title">научиться читать по слогам</h3>
-            <span class="task__meta">18.04.2026</span>
-            <span class="task__meta">21:57</span>
+        <div class="todo__items tasks">
+          <!-- <div class="task">
+            <div class="task__content">
+              <h3 class="task__title">научиться читать по слогам</h3>
+              <div class="task__meta">18.04.2026 21:57</div>
+            </div>
+            <div class="task__actions">
+              <button class="task__action task__action_edit">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="14px"
+                  height="14px"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M20.1497 7.93997L8.27971 19.81C7.21971 20.88 4.04971 21.3699 3.27971 20.6599C2.50971 19.9499 3.06969 16.78 4.12969 15.71L15.9997 3.84C16.5478 3.31801 17.2783 3.03097 18.0351 3.04019C18.7919 3.04942 19.5151 3.35418 20.0503 3.88938C20.5855 4.42457 20.8903 5.14781 20.8995 5.90463C20.9088 6.66146 20.6217 7.39189 20.0997 7.93997H20.1497Z"
+                    stroke="#000000"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M21 21H12"
+                    stroke="#000000"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+              <button class="task__action task__action_delete">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="14px"
+                  height="14px"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M4 6H20M16 6L15.7294 5.18807C15.4671 4.40125 15.3359 4.00784 15.0927 3.71698C14.8779 3.46013 14.6021 3.26132 14.2905 3.13878C13.9376 3 13.523 3 12.6936 3H11.3064C10.477 3 10.0624 3 9.70951 3.13878C9.39792 3.26132 9.12208 3.46013 8.90729 3.71698C8.66405 4.00784 8.53292 4.40125 8.27064 5.18807L8 6M18 6V16.2C18 17.8802 18 18.7202 17.673 19.362C17.3854 19.9265 16.9265 20.3854 16.362 20.673C15.7202 21 14.8802 21 13.2 21H10.8C9.11984 21 8.27976 21 7.63803 20.673C7.07354 20.3854 6.6146 19.9265 6.32698 19.362C6 18.7202 6 17.8802 6 16.2V6M14 10V17M10 10V17"
+                    stroke="#000000"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div> -->
+        </div>
+        <!-- row 4 -->
+        <div class="footer-controls">
+          <div class="footer-controls__counters">
+            <span>Всего: 1</span>
+            <span>Активных: 1</span>
+            <span>Выполненных: 0</span>
           </div>
-          <div class="task__actions">
-            <button class="task__action task__action_edit">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20px"
-                height="20px"
-                viewBox="0 0 24 24"
-                fill="none"
-              >
-                <path
-                  d="M20.1497 7.93997L8.27971 19.81C7.21971 20.88 4.04971 21.3699 3.27971 20.6599C2.50971 19.9499 3.06969 16.78 4.12969 15.71L15.9997 3.84C16.5478 3.31801 17.2783 3.03097 18.0351 3.04019C18.7919 3.04942 19.5151 3.35418 20.0503 3.88938C20.5855 4.42457 20.8903 5.14781 20.8995 5.90463C20.9088 6.66146 20.6217 7.39189 20.0997 7.93997H20.1497Z"
-                  stroke="#000000"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <path
-                  d="M21 21H12"
-                  stroke="#000000"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </button>
-            <button class="task__action task__action_delete">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20px"
-                height="20px"
-                viewBox="0 0 24 24"
-                fill="none"
-              >
-                <path
-                  d="M4 6H20M16 6L15.7294 5.18807C15.4671 4.40125 15.3359 4.00784 15.0927 3.71698C14.8779 3.46013 14.6021 3.26132 14.2905 3.13878C13.9376 3 13.523 3 12.6936 3H11.3064C10.477 3 10.0624 3 9.70951 3.13878C9.39792 3.26132 9.12208 3.46013 8.90729 3.71698C8.66405 4.00784 8.53292 4.40125 8.27064 5.18807L8 6M18 6V16.2C18 17.8802 18 18.7202 17.673 19.362C17.3854 19.9265 16.9265 20.3854 16.362 20.673C15.7202 21 14.8802 21 13.2 21H10.8C9.11984 21 8.27976 21 7.63803 20.673C7.07354 20.3854 6.6146 19.9265 6.32698 19.362C6 18.7202 6 17.8802 6 16.2V6M14 10V17M10 10V17"
-                  stroke="#000000"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </button>
-          </div>
+          <button class="footer-controls__clear">
+            <p>Очистить выполненные</p>
+          </button>
         </div>
       </div>
     </main>
 
     <script src="./task.js"></script>
-    <script src="./taskHomework.js"></script>
+    <!-- <script src="./taskStudy.js"></script> -->
+    <!-- <script src="./homework9.js"></script> -->
   </body>
 </html>
 
